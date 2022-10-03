@@ -25,7 +25,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     return UserDetailsImpl.build(user);
   }
 
-
   public List<User> fetchAllUser()
   {
     return userRepository.findAll();

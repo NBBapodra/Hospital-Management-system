@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -19,16 +20,14 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @NotBlank
-  @Size(max = 20)
+  @NotNull(message = "Username can not be null")
   private String username;
 
-  @NotBlank
-  @Size(max = 50)
-  @Email
+  @NotNull
+  @Email(message ="Invalid Email address")
   private String email;
 
-  @NotBlank
+  @NotNull(message = "password can not be null")
   @Size(max = 120)
   private String password;
 
