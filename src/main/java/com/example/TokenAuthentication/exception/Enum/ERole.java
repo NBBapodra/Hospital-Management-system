@@ -1,4 +1,4 @@
-package com.example.TokenAuthentication.models;
+package com.example.TokenAuthentication.exception.Enum;
 
 public enum ERole {
   ROLE_USER,

@@ -1,4 +1,4 @@
-package com.example.TokenAuthentication.security.services;
+package com.example.TokenAuthentication.services;
 
 import com.example.TokenAuthentication.models.User;
 import com.example.TokenAuthentication.repository.UserRepository;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -20,20 +21,22 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   @Transactional
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
+            .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
 
     return UserDetailsImpl.build(user);
   }
 
-  public List<User> fetchAllUser()
-  {
+  public List<User> fetchAllUser() {
     return userRepository.findAll();
   }
 
-
-  public void deleteUserById(Long id)
-  {
+  public void deleteUserById(Long id) {
     userRepository.deleteById(id);
+  }
+
+  public Optional<User> findByid(Long id) {
+
+    return userRepository.findById(id);
   }
 
 }

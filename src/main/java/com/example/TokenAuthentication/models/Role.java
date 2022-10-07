@@ -1,5 +1,7 @@
 package com.example.TokenAuthentication.models;
 
+import com.example.TokenAuthentication.exception.Enum.ERole;
+
 import javax.persistence.*;
 
 @Entity

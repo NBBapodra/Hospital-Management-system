@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import com.example.TokenAuthentication.models.ERole;
+import com.example.TokenAuthentication.exception.Enum.ERole;
 import com.example.TokenAuthentication.models.Role;
 import com.example.TokenAuthentication.models.User;
 import com.example.TokenAuthentication.payload.request.LoginRequest;
@@ -17,7 +17,7 @@ import com.example.TokenAuthentication.payload.response.MessageResponse;
 import com.example.TokenAuthentication.repository.RoleRepository;
 import com.example.TokenAuthentication.repository.UserRepository;
 import com.example.TokenAuthentication.security.jwt.JwtUtils;
-import com.example.TokenAuthentication.security.services.UserDetailsImpl;
+import com.example.TokenAuthentication.services.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

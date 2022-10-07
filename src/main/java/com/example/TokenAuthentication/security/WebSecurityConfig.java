@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.example.TokenAuthentication.security.jwt.AuthEntryPointJwt;
 import com.example.TokenAuthentication.security.jwt.AuthTokenFilter;
-import com.example.TokenAuthentication.security.services.UserDetailsServiceImpl;
+import com.example.TokenAuthentication.services.UserDetailsServiceImpl;
 
 @Configuration
 @EnableGlobalMethodSecurity(
@@ -87,7 +87,8 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
         .authorizeRequests().antMatchers("/api/auth/**").permitAll()
-        .antMatchers("/api/test/**").permitAll()
+            .antMatchers("/api/test/**", "/api/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+            .antMatchers("/api/test/**").permitAll()
         .anyRequest().authenticated();
     
     http.authenticationProvider(authenticationProvider());

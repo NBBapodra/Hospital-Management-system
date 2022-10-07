@@ -1,17 +1,17 @@
 package com.example.TokenAuthentication.controllers;
 
 import com.example.TokenAuthentication.models.User;
-import com.example.TokenAuthentication.security.services.UserDetailsServiceImpl;
+import com.example.TokenAuthentication.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/test")
-public class TestController {
+public class UserController {
 
 
   @Autowired
@@ -23,6 +23,14 @@ public class TestController {
   {
     return userDetailsService.fetchAllUser();
   }
+
+
+  @GetMapping("/users/{id}")
+  public Optional<User> findById(@PathVariable("id") Long id)
+  {
+    return userDetailsService.findByid(id);
+  }
+
 
   @DeleteMapping("/users/{id}")
   public String deleteUserById(@PathVariable("id") Long id)

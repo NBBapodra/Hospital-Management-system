@@ -1,4 +1,4 @@
-package com.example.TokenAuthentication.security.services;
+package com.example.TokenAuthentication.services;
 
 import java.util.Collection;
 import java.util.List;
