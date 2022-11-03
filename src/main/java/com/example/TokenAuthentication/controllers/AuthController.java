@@ -5,9 +5,12 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import com.example.TokenAuthentication.exception.Enum.ERole;
+import com.example.TokenAuthentication.dto.PasswordRequestDto;
+import com.example.TokenAuthentication.dto.exception.Enum.ERole;
 import com.example.TokenAuthentication.models.Role;
 import com.example.TokenAuthentication.models.User;
 import com.example.TokenAuthentication.payload.request.LoginRequest;
@@ -18,6 +21,7 @@ import com.example.TokenAuthentication.repository.RoleRepository;
 import com.example.TokenAuthentication.repository.UserRepository;
 import com.example.TokenAuthentication.security.jwt.JwtUtils;
 import com.example.TokenAuthentication.services.UserDetailsImpl;
+import com.example.TokenAuthentication.services.serviceImpl.TwilioOTPService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,6 +29,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -48,9 +53,12 @@ public class AuthController {
   PasswordEncoder encoder;
 
   @Autowired
+  private TwilioOTPService twilioOTPService;
+
+  @Autowired
   JwtUtils jwtUtils;
 
-  @PostMapping("/signin")
+  @PostMapping("/signIn")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
     Authentication authentication = authenticationManager.authenticate(
@@ -67,7 +75,7 @@ public class AuthController {
     return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getId(),userDetails.getUsername(),userDetails.getEmail(),roles));
   }
 
-  @PostMapping("/signup")
+  @PostMapping("/signUp")
   public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 
     if (userRepository.existsByUsername(signUpRequest.getUsername())) {
@@ -113,9 +121,25 @@ public class AuthController {
       });
     }
 
-    user.setRoles(roles);
-    userRepository.save(user);
+      user.setRoles(roles);
+      userRepository.save(user);
 
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
+
+  @PostMapping("/forgetPassword")
+  public void sendOtp(PasswordRequestDto passwordRequestDto)
+  {
+    twilioOTPService.sendOTPForPasswordReset(passwordRequestDto);
+  }
+
+  @PostMapping("/logout")
+  public void logout(HttpServletRequest request, HttpServletResponse response) {
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    if (auth != null){
+      new SecurityContextLogoutHandler().logout(request, response, auth);
+    }
+    SecurityContextHolder.getContext().setAuthentication(null);
+  }
+
 }

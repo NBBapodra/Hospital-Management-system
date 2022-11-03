@@ -1,4 +1,4 @@
-package com.example.TokenAuthentication.exception;
+package com.example.TokenAuthentication.dto.exception;
 
 public class InvoiceNotFoundException extends RuntimeException{
 

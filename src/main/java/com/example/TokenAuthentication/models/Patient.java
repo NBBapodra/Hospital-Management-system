@@ -1,7 +1,7 @@
 package com.example.TokenAuthentication.models;
 
 
-import com.example.TokenAuthentication.exception.Enum.PatientStatus;
+import com.example.TokenAuthentication.dto.exception.Enum.PatientStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 

@@ -1,6 +1,6 @@
 package com.example.TokenAuthentication.dto;
 
-import com.example.TokenAuthentication.exception.Enum.PatientStatus;
+import com.example.TokenAuthentication.dto.exception.Enum.PatientStatus;
 import com.example.TokenAuthentication.models.City;
 import com.example.TokenAuthentication.models.Country;
 import com.example.TokenAuthentication.models.State;

@@ -1,6 +1,6 @@
 package com.example.TokenAuthentication.models;
 
-import com.example.TokenAuthentication.exception.Enum.DoctorStatus;
+import com.example.TokenAuthentication.dto.exception.Enum.DoctorStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

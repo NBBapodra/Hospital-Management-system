@@ -1,4 +1,4 @@
-package com.example.TokenAuthentication.exception.Enum;
+package com.example.TokenAuthentication.dto.exception.Enum;
 
 public enum PatientStatus {
     PENDING,

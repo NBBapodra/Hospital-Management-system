@@ -1,4 +1,4 @@
-package com.example.TokenAuthentication.exception;
+package com.example.TokenAuthentication.dto.exception;
 
 import java.util.Date;
 
