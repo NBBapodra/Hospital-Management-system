@@ -1,4 +1,4 @@
-package com.example.TokenAuthentication.dto.exception;
+package com.example.TokenAuthentication.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

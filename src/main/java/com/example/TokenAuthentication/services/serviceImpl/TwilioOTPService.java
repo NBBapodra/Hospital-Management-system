@@ -2,7 +2,7 @@ package com.example.TokenAuthentication.services.serviceImpl;
 
 
 import com.example.TokenAuthentication.config.TwilioConfig;
-import com.example.TokenAuthentication.dto.exception.Enum.Otpstatus;
+import com.example.TokenAuthentication.exception.Enum.Otpstatus;
 import com.example.TokenAuthentication.dto.PasswordRequestDto;
 import com.example.TokenAuthentication.dto.PasswordResponseDto;
 import com.twilio.rest.api.v2010.account.Message;

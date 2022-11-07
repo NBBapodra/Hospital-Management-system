@@ -1,6 +1,6 @@
 package com.example.TokenAuthentication.services.serviceImpl;
 
-import com.example.TokenAuthentication.dto.exception.ResourceNotFoundException;
+import com.example.TokenAuthentication.exception.ResourceNotFoundException;
 import com.example.TokenAuthentication.models.Patient;
 import com.example.TokenAuthentication.repository.PatientRepository;
 import com.example.TokenAuthentication.services.PatientService;

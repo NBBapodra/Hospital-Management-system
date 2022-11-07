@@ -2,9 +2,7 @@ package com.example.TokenAuthentication.controllers;
 
 
 import com.example.TokenAuthentication.dto.AppointmentDto;
-import com.example.TokenAuthentication.dto.InvoiceDto;
 import com.example.TokenAuthentication.models.Appointment;
-import com.example.TokenAuthentication.models.Invoice;
 import com.example.TokenAuthentication.services.AppointmentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController

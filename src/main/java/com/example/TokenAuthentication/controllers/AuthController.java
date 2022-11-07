@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import com.example.TokenAuthentication.dto.PasswordRequestDto;
-import com.example.TokenAuthentication.dto.exception.Enum.ERole;
+import com.example.TokenAuthentication.exception.Enum.ERole;
 import com.example.TokenAuthentication.models.Role;
 import com.example.TokenAuthentication.models.User;
 import com.example.TokenAuthentication.payload.request.LoginRequest;

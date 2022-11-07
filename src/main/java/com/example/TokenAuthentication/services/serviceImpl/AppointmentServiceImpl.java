@@ -1,11 +1,8 @@
 package com.example.TokenAuthentication.services.serviceImpl;
 
 
-import com.example.TokenAuthentication.dto.exception.AppointmentNotFoundException;
-import com.example.TokenAuthentication.dto.exception.InvoiceNotFoundException;
-import com.example.TokenAuthentication.dto.exception.ResourceNotFoundException;
+import com.example.TokenAuthentication.exception.AppointmentNotFoundException;
 import com.example.TokenAuthentication.models.Appointment;
-import com.example.TokenAuthentication.models.Invoice;
 import com.example.TokenAuthentication.repository.AppointmentRepository;
 import com.example.TokenAuthentication.services.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;

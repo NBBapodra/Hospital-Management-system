@@ -1,7 +1,7 @@
 package com.example.TokenAuthentication.models;
 
 
-import com.example.TokenAuthentication.dto.exception.Enum.AppointmentStatus;
+import com.example.TokenAuthentication.exception.Enum.AppointmentStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
