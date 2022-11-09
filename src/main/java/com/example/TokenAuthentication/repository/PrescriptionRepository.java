@@ -7,12 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 
 
 @Repository
 public interface PrescriptionRepository extends JpaRepository<Prescription,Long> {
 
-    @Query(value = "SELECT p.patientName FROM Prescription p where p.patientName=:patientName")
-    Prescription getPrescriptionByPatientName(@Param("patientName") String patientName);
+    @Query(value = "SELECT p FROM Prescription p where patientName=:patientName")
+    List<Prescription> getPrescriptionByPatientName(@Param("patientName") String patientName);
 
 }

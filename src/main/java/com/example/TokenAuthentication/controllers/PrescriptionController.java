@@ -58,18 +58,10 @@ public class PrescriptionController {
         return ResponseEntity.ok().body(prescriptionResponse);
     }
 
-    @GetMapping("/prescriptions/{name}")
-    public ResponseEntity<PrescriptionDto> getPrescriptionByPatientName(@PathVariable(value = "name") String patientName)
+    @GetMapping("/prescriptions/name/{patientName}")
+    public ResponseEntity<List<Prescription>> getPrescriptionByPatientName(@PathVariable(value = "patientName") String patientName)
     {
-        Prescription prescription=prescriptionService.getPrescriptionByPatientName(patientName);
-
-        PrescriptionDto prescriptionResponse=modelMapper.map(prescription,PrescriptionDto.class);
-
-        if(prescription==null)
-        {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-        return ResponseEntity.ok().body(prescriptionResponse);
+            return new ResponseEntity<>(prescriptionService.getPrescriptionByPatientName(patientName),HttpStatus.OK);
     }
 
     @PutMapping("/prescriptions/{id}")

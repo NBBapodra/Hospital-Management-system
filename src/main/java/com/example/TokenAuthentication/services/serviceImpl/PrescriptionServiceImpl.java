@@ -27,7 +27,7 @@ public class PrescriptionServiceImpl implements PrescriptionService {
     }
 
     @Override
-    public Prescription getPrescriptionByPatientName(String patientName) {
+    public List<Prescription> getPrescriptionByPatientName(String patientName) {
         return prescriptionRepository.getPrescriptionByPatientName(patientName);
     }
 

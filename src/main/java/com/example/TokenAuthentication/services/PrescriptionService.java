@@ -9,7 +9,7 @@ public interface PrescriptionService {
 
     List<Prescription> getAllPrescription();
 
-   Prescription getPrescriptionByPatientName(String patientName);
+   List<Prescription> getPrescriptionByPatientName(String patientName);
 
     Prescription createPrescription(Prescription prescription);
 
