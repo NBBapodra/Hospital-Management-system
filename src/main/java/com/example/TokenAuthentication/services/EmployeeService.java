@@ -1,6 +1,7 @@
 package com.example.TokenAuthentication.services;
 
 import com.example.TokenAuthentication.models.Employee;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -16,4 +17,5 @@ public interface EmployeeService {
 
     Employee getEmployeeById(Long employeeId);
 
+    Page<Employee> getEmployeePagination(Integer pageNo, Integer pageSize);
 }

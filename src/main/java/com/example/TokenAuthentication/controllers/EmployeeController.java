@@ -6,6 +6,7 @@ import com.example.TokenAuthentication.repository.EmployeeRepository;
 import com.example.TokenAuthentication.services.EmployeeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -85,4 +86,12 @@ public class EmployeeController {
         employeeService.deleteEmployee(employeeId);
         return ResponseEntity.ok().body("Employee deleted successFully");
     }
+
+
+    @GetMapping("/employees/pages")
+    public Page<Employee> employeePagination(@RequestParam Integer pageNo,@RequestParam Integer pageSize)
+    {
+        return employeeService.getEmployeePagination(pageNo,pageSize);
+    }
+
 }
