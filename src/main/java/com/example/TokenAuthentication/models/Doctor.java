@@ -47,44 +47,8 @@ public class Doctor {
     @Column(name = "address")
     private String address;
 
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "category_id")
-    private Category category;
-
-    @Column(name = "education")
-    private String education;
-
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "speciality_id")
-    private Speciality speciality;
-
-    @Column(name = "availability")
-    private Time availability;
-
-    @Column(name = "experience")
-    private Long experience;
-
-    @Column(name = "achievements")
-    private String achievements;
-
-    @Column(name = "award")
-    private String awards;
-
     @Column(name = "image")
     private String image;
-
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "event_id")
-    private Event event;
-
-    @Column(name = "certificates")
-    private String certificates;
-
-    @Column(name = "documents")
-    private String documents;
-
-    @Column(name = "consultation_fees")
-    private Long consultationFees;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 20)
@@ -93,14 +57,6 @@ public class Doctor {
     @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name = "location_id")
     private Location location;
-
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "service_id")
-    private Services services;
-
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "gallery_id")
-    private DoctorGalleryImage galleryImage;
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)

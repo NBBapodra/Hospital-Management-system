@@ -84,8 +84,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Page<Employee> getEmployeePagination(Integer pageNo, Integer pageSize) {
-
+    public Page<Employee> getEmployeePagination(Integer pageNo, Integer pageSize)   {
         Pageable pageable= PageRequest.of(pageNo,pageSize,Sort.by(Sort.Order.asc("id")));
         return employeeRepository.findAll(pageable);
     }

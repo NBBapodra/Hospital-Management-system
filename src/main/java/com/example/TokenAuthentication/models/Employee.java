@@ -72,7 +72,6 @@ public class Employee {
     public void setId(long id) {
         this.id = id;
     }
-
     public String getFirstname() {
         return firstname;
     }

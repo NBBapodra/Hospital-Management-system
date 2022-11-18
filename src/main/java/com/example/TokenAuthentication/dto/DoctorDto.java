@@ -22,22 +22,9 @@ public class DoctorDto{
     private State state;
     private Country country;
     private String address;
-    private Category category;
-    private String education;
-    private Speciality speciality;
-    private Time availability;
-    private Long experience;
-    private String achievements;
-    private String awards;
     private String image;
-    private Event event;
-    private String certificates;
-    private String documents;
-    private Long consultationFees;
     private DoctorStatus status;
     private Location location;
-    private Services services;
-    private DoctorGalleryImage galleryImage;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

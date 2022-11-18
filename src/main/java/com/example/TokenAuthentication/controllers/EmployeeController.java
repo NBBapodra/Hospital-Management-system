@@ -31,7 +31,6 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
 
-
     @GetMapping("/employees")
     public List<EmployeeDto> getAllEmployees() {
         return employeeService.getAllEmployees().stream().map(post -> modelMapper.map(post, EmployeeDto.class))
