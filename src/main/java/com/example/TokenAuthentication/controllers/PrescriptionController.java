@@ -1,8 +1,5 @@
 package com.example.TokenAuthentication.controllers;
 
-
-
-
 import com.example.TokenAuthentication.dto.PrescriptionDto;
 import com.example.TokenAuthentication.models.Prescription;
 import com.example.TokenAuthentication.services.PrescriptionService;

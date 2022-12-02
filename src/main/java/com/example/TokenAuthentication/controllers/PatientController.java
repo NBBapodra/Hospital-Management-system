@@ -1,8 +1,6 @@
 package com.example.TokenAuthentication.controllers;
 
 
-
-
 import com.example.TokenAuthentication.dto.PatientDto;
 import com.example.TokenAuthentication.models.Patient;
 import com.example.TokenAuthentication.repository.PatientRepository;

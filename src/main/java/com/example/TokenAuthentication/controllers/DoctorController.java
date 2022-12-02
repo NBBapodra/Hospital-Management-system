@@ -4,11 +4,7 @@ package com.example.TokenAuthentication.controllers;
 
 
 import com.example.TokenAuthentication.dto.DoctorDto;
-import com.example.TokenAuthentication.dto.EmployeeDto;
-import com.example.TokenAuthentication.dto.HCPDto;
 import com.example.TokenAuthentication.models.Doctor;
-import com.example.TokenAuthentication.models.Employee;
-import com.example.TokenAuthentication.models.HCPProfile;
 import com.example.TokenAuthentication.services.DoctorService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

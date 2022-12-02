@@ -1,8 +1,6 @@
 package com.example.TokenAuthentication.services;
 
 import com.example.TokenAuthentication.models.Doctor;
-import com.example.TokenAuthentication.models.HCPProfile;
-
 
 import java.util.List;
 

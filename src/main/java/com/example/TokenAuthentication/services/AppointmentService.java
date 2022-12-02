@@ -2,7 +2,6 @@ package com.example.TokenAuthentication.services;
 
 import com.example.TokenAuthentication.models.Appointment;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
